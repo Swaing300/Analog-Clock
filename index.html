@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        border: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: rgb(202, 43, 43);
+      }
+      .container{
+        box-shadow: 0px 0px 20px 10px rgb(72, 3, 39);
+        background: url("./1000x1000bb.jpg") 20% 50% no-repeat;
+        background-size: cover;
+        width: 40vh;
+        height: 40vh;
+        border-radius: 90vh;
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+        margin-left: 90vh;
+        margin-top: 30vh;
+      }
+      .sec1 {
+        transform: rotate(90deg);
+        background-color: rgb(5, 53, 45);
+        border-radius: 50px;
+        border: 1px solid wheat;
+        height: 5vh;
+        width: 5vh;
+        justify-content: center;
+        display: flex;
+        align-self: center;
+      }
+      .sec2 {
+        transform: rotate(90deg);
+        height: 40vh;
+        width: 40vh;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        position: relative;
+        left: 90vh;
+        bottom: 40vh;
+      }
+      .sec3 {
+        transform: rotate(90deg);
+        height: 40vh;
+        width: 40vh;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        position: relative;
+        left: 90vh;
+        bottom: 80vh;
+      }
+      .second {
+        position: relative;
+        font-size: 1.3ch;
+        align-self: center;
+        margin-right: 72px;
+        margin-top: -14px;
+      }
+      .minut {
+        position: relative;
+        font-size: 1.1ch;
+        align-self: center;
+        margin-right: 72px;
+        margin-top: -14px;
+      }
+      .hour {
+        position: relative;
+        font-size: 1.1ch;
+        align-self: center;
+        margin-right: 72px;
+        margin-top: -14px;
+      }
+      .round {
+        height: 20vh;
+        width: 20vh;
+        border-radius: 90ch;
+        position: relative;
+        bottom: 110vh;
+        left: 100vh;
+        background-color: rgb(15, 26);
+        color: white;
+        display: block;
+      }
+      section {
+        display: flex;
+        justify-content: space-between;
+      }
+      .small_round{
+        height: 2vh;
+        width: 2vh;
+        border-radius: 50vh;
+        position: relative;
+        left: 109vh;
+        bottom: 101vh;
+        background-color: rgb(7, 18, 89);
+        border: 1px solid rgb(125, 23, 23);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sec1" id="sec1" style="color: rgb(72, 34, 142); font-size: 150px">
+        <span class="second">&#x2190;</span>
+      </div>
+    </div>
+    <div class="sec2" id="sec2" style="color: rgb(155, 174, 27); font-size: 150px">
+      <span class="minut">&#x2190;</span>
+    </div>
+    <div class="sec3" id="sec3" style="color: rgb(11, 132, 112); font-size: 150px">
+      <span class="hour" >&#x2190;</span>
+    </div>
+    <div class="small_round"></div>
+    <script>
+      setInterval(watch, 1000);
+      function watch() {
+        let date = new Date();
+        let second = date.getSeconds();
+        let minut = date.getMinutes();
+        let hour = date.getHours();
+        let hr = hour * 30 + 90;
+        let min = minut * 6 + 90;
+        let sec = second * 6 + 90;
+        console.log(hour, minut, second);
+        document.getElementById("sec1").style.transform = `rotate(${sec}deg)`;
+        document.getElementById("sec2").style.transform = `rotate(${min}deg)`;
+        document.getElementById("sec3").style.transform = `rotate(${hr}deg)`;
+      }
+    </script>
+  </body>
+</html>
