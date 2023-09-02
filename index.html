@@ -12,7 +12,7 @@
         box-sizing: border-box;
       }
       body {
-        background-color: rgb(202, 43, 43);
+        background-color: rgb(53, 137, 201);
       }
       .container{
         box-shadow: 0px 0px 20px 10px rgb(72, 3, 39);
@@ -109,6 +109,13 @@
     </style>
   </head>
   <body>
+    <div style="display: flex; height: 70px; justify-content: center; align-items: flex-end;"><h1 id="rel">
+        
+    </h1>&nbsp;
+    <h1>
+         everyone here it is my 1st Analog clock.
+    </h1>
+  </div>
     <div class="container">
       <div class="sec1" id="sec1" style="color: rgb(72, 34, 142); font-size: 150px">
         <span class="second">&#x2190;</span>
@@ -121,6 +128,7 @@
       <span class="hour" >&#x2190;</span>
     </div>
     <div class="small_round"></div>
+  </div>
     <script>
       setInterval(watch, 1000);
       function watch() {
@@ -131,6 +139,21 @@
         let hr = hour * 30 + 90;
         let min = minut * 6 + 90;
         let sec = second * 6 + 90;
+        if(hour>=0 && hour<=1){
+            document.getElementById("rel").innerText=" A New Day ";   
+            }
+            else if(hour<12){
+            document.getElementById("rel").innerText=" Good Morning ";   
+            }
+            else if(hour==12){
+            document.getElementById("rel").innerText=" It's Noon ";   
+            }
+            else if(hour>12 && hour<21){
+            document.getElementById("rel").innerText=" Good Afternoon ";   
+            }
+            else if(hour>=21){
+            document.getElementById("rel").innerText=" Good Night ";
+            } 
         console.log(hour, minut, second);
         document.getElementById("sec1").style.transform = `rotate(${sec}deg)`;
         document.getElementById("sec2").style.transform = `rotate(${min}deg)`;
